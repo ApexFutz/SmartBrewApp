@@ -1,0 +1,9 @@
+id,name,category,roast,grind,size_oz,price_usd,stock,description,image
+SB001,Midnight Ember,Whole Bean,Dark,Whole Bean,12,16.99,25,"Bold dark roast with cocoa and toasted walnut notes.",""
+SB002,Sunrise Bloom,Whole Bean,Light,Whole Bean,12,16.49,18,"Bright citrus acidity with floral aroma; clean finish.",""
+SB003,Velvet Espresso,Whole Bean,Medium-Dark,Whole Bean,12,17.99,30,"Rich espresso blend with caramel sweetness and crema-friendly body.",""
+SB004,House Classic Ground,Ground,Medium,Ground,12,15.99,40,"Balanced everyday cup with chocolate and mild nutty notes.",""
+SB005,Cold Brew Crush,Coarse Ground,Dark,Coarse,16,18.49,14,"Designed for cold brew: smooth body with low acidity.",""
+SB006,Decaf Calm,Whole Bean,Medium,Whole Bean,12,16.99,10,"Decaf profile with cocoa and brown sugar.",""
+SB007,Taster Trio Bundle,Bundle,Mixed,Mixed,36,44.99,8,"Three 12oz bags: light, medium, and espresso blend.",""
+SB008,Nashville Morning,Whole Bean,Medium,Whole Bean,12,16.79,0,"Seasonal blend—currently sold out.",""
