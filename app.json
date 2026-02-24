@@ -13,7 +13,13 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.smartbrew.app",
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "YOUR_GOOGLE_IOS_CLIENT_ID"
+        }
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -21,13 +27,26 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.smartbrew.app",
+      "config": {
+        "googleSignIn": {
+          "apiKey": "YOUR_GOOGLE_ANDROID_API_KEY"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-asset"
+      "expo-asset",
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosClientId": "YOUR_GOOGLE_IOS_CLIENT_ID",
+          "webClientId": "YOUR_GOOGLE_WEB_CLIENT_ID"
+        }
+      ]
     ]
   }
 }

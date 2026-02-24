@@ -1,0 +1,19 @@
+Firebase Project ID
+--------------------------
+smartbrewcoffee-f03c0
+------------------------------
+API Key
+
+--------------------------
+Auth Domain
+
+--------------------------------
+YOUR_GOOGLE_IOS_CLIENT_ID
+
+----------------------------------
+YOUR_GOOGLE_ANDROID_API_KEY
+
+------------------------------------
+YOUR_GOOGLE_WEB_CLIENT_ID
+
+----------------------------
