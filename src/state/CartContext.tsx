@@ -11,6 +11,7 @@ type CartContextType = {
   addToCart: (product: Product) => { ok: boolean; message?: string };
   removeFromCart: (productId: string) => void;
   setQty: (productId: string, qty: number) => { ok: boolean; message?: string };
+  clearCart: () => void;
   subtotal: number;
 };
 
@@ -54,6 +55,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     setItems((prev) => prev.filter((i) => i.product.id !== productId));
   };
 
+  const clearCart = () => {
+    setItems([]);
+  };
+
   const setQty = (productId: string, qty: number) => {
     setItems((prev) => {
       const idx = prev.findIndex((i) => i.product.id === productId);
@@ -80,7 +85,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, [items]);
 
   const value = useMemo(
-    () => ({ items, addToCart, removeFromCart, setQty, subtotal }),
+    () => ({ items, addToCart, removeFromCart, setQty, clearCart, subtotal }),
     [items, subtotal]
   );
 

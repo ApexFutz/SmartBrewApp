@@ -3,18 +3,25 @@ import { Alert, Pressable, SafeAreaView, Text, View } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Product } from "../types/Product";
 import { useCart } from "../state/CartContext";
+import { useProducts } from "../state/ProductContext";
 
 type RootStackParamList = {
   Home: undefined;
   Product: { product: Product };
   Cart: undefined;
+  Checkout: undefined;
 };
 
 type Props = NativeStackScreenProps<RootStackParamList, "Product">;
 
 export default function ProductScreen({ route, navigation }: Props) {
-  const { product } = route.params;
+  const { product: initialProduct } = route.params;
   const { items, addToCart } = useCart();
+  const { getProductById } = useProducts();
+
+  // Get the latest product data from context to reflect inventory changes
+  const product = getProductById(initialProduct.id) || initialProduct;
+
   const [adding, setAdding] = useState(false);
 
   const inCartQty = useMemo(() => {

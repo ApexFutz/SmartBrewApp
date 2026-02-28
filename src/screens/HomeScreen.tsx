@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, FlatList, Pressable, SafeAreaView, Text, TextInput, View } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { loadProductsFromCsv } from "../data/loadProducts";
+import { useProducts } from "../state/ProductContext";
 import { Product } from "../types/Product";
 
 type RootStackParamList = {
@@ -13,27 +14,8 @@ type RootStackParamList = {
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 
 export default function HomeScreen({ navigation }: Props) {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { products, loading, error } = useProducts();
   const [query, setQuery] = useState("");
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    let alive = true;
-    (async () => {
-      try {
-        const data = await loadProductsFromCsv();
-        if (alive) setProducts(data);
-      } catch (e) {
-        const msg = e instanceof Error ? e.message : String(e);
-        console.warn("Load error:", msg);
-        if (alive) setError(msg);
-      } finally {
-        if (alive) setLoading(false);
-      }
-    })();
-    return () => { alive = false; };
-  }, []);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
