@@ -1,10 +1,11 @@
 import Papa from "papaparse";
-import { readAsStringAsync } from "expo-file-system/legacy";
 import { Asset } from "expo-asset";
 import { Product } from "../types/Product";
 
+// Platform-agnostic CSV loading
 export async function loadProductsFromCsv(): Promise<Product[]> {
   try {
+    // Use Asset for both platforms
     const asset = Asset.fromModule(require("../../assets/products.csv"));
     
     if (!asset.downloaded) {
@@ -14,7 +15,19 @@ export async function loadProductsFromCsv(): Promise<Product[]> {
     const uri = asset.localUri ?? asset.uri;
     console.log("CSV Asset URI:", uri);
     
-    const csvText = await readAsStringAsync(uri);
+    let csvText: string;
+    
+    // Check if we're on web
+    if (typeof window !== 'undefined' && typeof fetch === 'function') {
+      // For web, use fetch
+      const response = await fetch(uri);
+      csvText = await response.text();
+    } else {
+      // For native, use expo-file-system
+      const { readAsStringAsync } = require("expo-file-system/legacy");
+      csvText = await readAsStringAsync(uri);
+    }
+    
     console.log("CSV Content (first 100 chars):", csvText.substring(0, 100));
 
     const parsed = Papa.parse<Product>(csvText, { header: true, skipEmptyLines: true });
