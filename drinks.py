@@ -1,0 +1,12 @@
+# ##id,name,category,roast,grind,size_oz,price_usd,stock,description,image
+# 1,Vanilla Latte,Cafe Latte,Espresso,Hot,16,6.89,24,"Espresso, steamed milk, and vanilla syrup.",""
+# 2,Caramel Macchiato,Cafe Latte,Espresso,Hot,16,6.89,24,"Espresso, steamed milk, vanilla syrup, and caramel drizzle.",""
+# 3,Mocha,Cafe Latte,Espresso,Hot,16,6.89,24,"Espresso, steamed milk, chocolate syrup, and whipped cream.",""
+# 4,Chai Latte,Cafe Latte,Spiced,Hot,16,5.99,24,"Black tea infused with spices, steamed milk, and sweetener.",""
+# 5,Matcha Latte,Cafe Latte,Green Tea,Hot,16,5.99,24,"Finely ground green tea leaves whisked with steamed milk.",""
+# 6,Vanilla Iced Latte,Cafe Latte,Espresso,Cold,16,6.89,24,"Espresso, cold milk, vanilla syrup, and ice.",""
+# 7,Caramel Iced Macchiato,Cafe Latte,Espresso,Cold,16,6.89,24,"Espresso, cold milk, vanilla syrup, caramel drizzle, and ice.",""
+# 8,Mocha Iced Latte,Cafe Latte,Espresso,Cold,16,6.89,24,"Espresso, cold milk, chocolate syrup, whipped cream, and ice.",""
+# 9,Caramel Frappuccino,Frappuccino,Espresso,Cold,16,5.99,20,"Blended coffee with caramel syrup, topped with whipped cream and caramel drizzle.",""
+# 10,Mocha Frappuccino,Frappuccino,Espresso,Cold,16,5.99,20,"Blended coffee with chocolate syrup, whipped cream, and chocolate drizzle.",""
+# 11,Vanilla Bean Frappuccino,Frappuccino,Espresso,Cold,16,5.99,20,"Creamy vanilla bean blend with ice and whipped cream.",""
